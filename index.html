@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.js"></script>
+  <title>音乐可视化</title>
+  <style>
+    #p5sketch {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background-color: #222222;
+    }
+
+    img {
+      width: 225px;
+      height: 225px;
+      object-fit: contain;
+      border-radius: 100%;
+      position: absolute;
+      top: calc(50% - 112.5px);
+      left: calc(50% - 112.5px);
+    }
+
+    img.playing {
+      animation: rotate 18s linear infinite;
+    }
+
+    img.paused {
+      animation-play-state: paused;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    audio {
+      position: relative;
+      left: 45px;
+      top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="p5sketch">
+    <img src="disk.jpg" alt="levi" id="musicImg" />
+    <!-- p5 instance will be created here -->
+  </div>
+  <audio src="ashes.mp3" controls id="armin"></audio>
+  <script src="index.js"></script>
+</body>
+
+</html>
